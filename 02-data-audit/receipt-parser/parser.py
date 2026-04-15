@@ -24,6 +24,8 @@ import re
 import json
 import csv
 import sys
+import platform
+import shutil
 import subprocess
 from pathlib import Path
 from datetime import date
@@ -201,18 +203,59 @@ def _extract_via_sdk(invoice_text: str) -> dict:
     return _parse_response(response.content[0].text)
 
 
+def _find_claude() -> list[str]:
+    """
+    Return the command prefix needed to invoke the claude CLI on this platform.
+
+    On Windows, claude is installed by npm as claude.cmd — a batch wrapper that
+    must be executed via cmd /c rather than called directly as a binary.
+    Resolution order:
+      1. shutil.which() for 'claude' / 'claude.cmd' / 'claude.exe' (covers any
+         platform where the npm bin dir is already on PATH)
+      2. Common Windows npm install locations (APPDATA\\npm, home\\AppData\\...)
+      3. cmd /c claude as a last-resort Windows fallback
+      4. Plain ['claude'] on non-Windows
+    """
+    if platform.system() == "Windows":
+        # shutil.which resolves PATH including the npm scripts folder
+        for name in ("claude", "claude.cmd", "claude.exe"):
+            found = shutil.which(name)
+            if found:
+                # .cmd files must be invoked through cmd /c on Windows
+                if found.lower().endswith(".cmd"):
+                    return ["cmd", "/c", found]
+                return [found]
+
+        # Fallback: check the two most common npm global install paths directly
+        appdata = os.environ.get("APPDATA", "")
+        candidates = [
+            Path(appdata) / "npm" / "claude.cmd",
+            Path.home() / "AppData" / "Roaming" / "npm" / "claude.cmd",
+        ]
+        for p in candidates:
+            if p.exists():
+                print(f"  [found claude at {p}]")
+                return ["cmd", "/c", str(p)]
+
+        # Last resort: let cmd.exe search PATH itself
+        return ["cmd", "/c", "claude"]
+
+    # macOS / Linux: standard lookup
+    found = shutil.which("claude")
+    return [found] if found else ["claude"]
+
+
 def _extract_via_cli(invoice_text: str) -> dict:
     """
     Fallback extraction using the `claude` CLI (Claude Code).
     Works inside Claude Code sessions without a separate API key.
     Combines the system prompt and invoice into a single prompt string.
     """
-    prompt = (
-        f"{SYSTEM_PROMPT}"
-        f"\n\nINVOICE TO PROCESS:\n{invoice_text}"
-    )
+    prompt = f"{SYSTEM_PROMPT}\n\nINVOICE TO PROCESS:\n{invoice_text}"
+    cmd = _find_claude() + ["-p", prompt]
+
     result = subprocess.run(
-        ["claude", "-p", prompt],
+        cmd,
         capture_output=True,
         text=True,
         encoding="utf-8",
@@ -220,7 +263,8 @@ def _extract_via_cli(invoice_text: str) -> dict:
     )
     if result.returncode != 0:
         raise RuntimeError(
-            f"claude CLI exited with code {result.returncode}: {result.stderr.strip()}"
+            f"claude CLI exited with code {result.returncode}: "
+            f"{result.stderr.strip() or result.stdout.strip()}"
         )
     return _parse_response(result.stdout)
 
