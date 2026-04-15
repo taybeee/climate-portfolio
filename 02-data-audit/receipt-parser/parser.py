@@ -3,25 +3,30 @@
 receipt-parser/parser.py
 Lumora Technologies — GHG Inventory Data Pipeline
 
-Extracts structured energy consumption data from utility invoices using the
-Anthropic API (Claude). Outputs parsed-invoices.csv with confidence scores
-and anomaly flags for each record.
+Extracts structured energy consumption data from utility invoices using Claude.
+Outputs parsed-invoices.csv with confidence scores and anomaly flags.
+
+Authentication (in priority order):
+  1. ANTHROPIC_API_KEY env var  → uses the Anthropic Python SDK directly
+  2. No API key                 → falls back to the `claude` CLI via subprocess
+                                  (works automatically inside Claude Code sessions)
 
 Usage:
-    ANTHROPIC_API_KEY=your_key python parser.py
+    python parser.py                          # auto-detects auth method
+    ANTHROPIC_API_KEY=sk-ant-... python parser.py  # force SDK mode
 
-Requirements:
+Requirements (SDK mode only):
     pip install anthropic
 """
 
+import os
 import re
 import json
 import csv
 import sys
+import subprocess
 from pathlib import Path
 from datetime import date
-
-import anthropic
 
 # ── Configuration ──────────────────────────────────────────────────────────── #
 
@@ -150,6 +155,13 @@ Now extract all fields from the invoice provided by the user and return the \
 JSON object only."""
 
 
+# ── Auth detection ─────────────────────────────────────────────────────────── #
+
+def _using_sdk() -> bool:
+    """Return True if ANTHROPIC_API_KEY is set; False to fall back to CLI."""
+    return bool(os.environ.get("ANTHROPIC_API_KEY", "").strip())
+
+
 # ── Extraction ─────────────────────────────────────────────────────────────── #
 
 def load_invoice(filepath: Path) -> str:
@@ -157,14 +169,23 @@ def load_invoice(filepath: Path) -> str:
     return filepath.read_text(encoding="utf-8")
 
 
-def extract_fields(invoice_text: str, client: anthropic.Anthropic) -> dict:
+def _parse_response(raw: str) -> dict:
+    """Strip optional markdown fences and parse JSON from a model response."""
+    raw = raw.strip()
+    raw = re.sub(r"^```[a-z]*\n?", "", raw)
+    raw = re.sub(r"\n?```$", "", raw)
+    return json.loads(raw)
+
+
+def _extract_via_sdk(invoice_text: str) -> dict:
     """
-    Send invoice text to Claude with a prompt-cached system prompt.
-    The system prompt (including the few-shot example) is marked with
-    cache_control so it is reused across all invoices in the batch,
-    reducing latency and API cost for calls 2 onwards.
-    Returns the extracted fields as a Python dict.
+    Extract fields using the Anthropic Python SDK.
+    The system prompt is marked cache_control: ephemeral so it is served from
+    cache for invoices 2 onwards, reducing latency and token cost.
     """
+    import anthropic  # imported here so CLI-only runs don't require the package
+
+    client = anthropic.Anthropic()
     response = client.messages.create(
         model=MODEL,
         max_tokens=MAX_TOKENS,
@@ -177,13 +198,41 @@ def extract_fields(invoice_text: str, client: anthropic.Anthropic) -> dict:
         ],
         messages=[{"role": "user", "content": invoice_text}],
     )
-    raw = response.content[0].text.strip()
+    return _parse_response(response.content[0].text)
 
-    # Strip accidental markdown fences if the model adds them
-    raw = re.sub(r"^```[a-z]*\n?", "", raw)
-    raw = re.sub(r"\n?```$", "", raw)
 
-    return json.loads(raw)
+def _extract_via_cli(invoice_text: str) -> dict:
+    """
+    Fallback extraction using the `claude` CLI (Claude Code).
+    Works inside Claude Code sessions without a separate API key.
+    Combines the system prompt and invoice into a single prompt string.
+    """
+    prompt = (
+        f"{SYSTEM_PROMPT}"
+        f"\n\nINVOICE TO PROCESS:\n{invoice_text}"
+    )
+    result = subprocess.run(
+        ["claude", "-p", prompt],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        timeout=120,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"claude CLI exited with code {result.returncode}: {result.stderr.strip()}"
+        )
+    return _parse_response(result.stdout)
+
+
+def extract_fields(invoice_text: str) -> dict:
+    """
+    Dispatch to SDK or CLI based on whether ANTHROPIC_API_KEY is set.
+    Returns the extracted fields as a Python dict.
+    """
+    if _using_sdk():
+        return _extract_via_sdk(invoice_text)
+    return _extract_via_cli(invoice_text)
 
 
 # ── Confidence scoring ─────────────────────────────────────────────────────── #
@@ -350,7 +399,9 @@ def parse_all_invoices() -> list[dict]:
     Process every .txt file in the invoices/ directory.
     Returns a list of enriched record dicts ready for CSV output.
     """
-    client = anthropic.Anthropic()
+    mode = "SDK (ANTHROPIC_API_KEY)" if _using_sdk() else "CLI (claude)"
+    print(f"Auth mode: {mode}\n")
+
     invoice_files = sorted(INVOICE_DIR.glob("*.txt"))
 
     if not invoice_files:
@@ -363,7 +414,7 @@ def parse_all_invoices() -> list[dict]:
         print(f"Processing: {filepath.name}")
         try:
             invoice_text = load_invoice(filepath)
-            extracted = extract_fields(invoice_text, client)
+            extracted = extract_fields(invoice_text)
 
             # Coerce quantity to float (model may return string or int)
             if extracted.get("quantity") is not None:
