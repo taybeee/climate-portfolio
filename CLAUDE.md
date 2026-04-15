@@ -1,5 +1,5 @@
-CLAUDE.md — Climate Risk Portfolio
-Taylor Black | Senior Climate Risk Professional
+CLAUDE.md — Sustainability & Climate Risk Portfolio
+Taylor Black | Senior Sustainability & Climate Risk Professional
 
 Who I Am
 I am a senior climate risk consultant with 5+ years of experience delivering physical risk, transition risk, GHG accounting, double materiality, and TCFD/CSRD disclosure engagements for Fortune 500 clients. I have built proprietary GIS-based physical risk models, developed double materiality assessment methodologies, led NGFS scenario transitions, and contributed to firm-wide AI strategy at BSR.
