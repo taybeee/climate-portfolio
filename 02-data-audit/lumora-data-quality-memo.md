@@ -215,7 +215,16 @@ CSRD ESRS E1 requires a disclosed methodology for determining which Scope 3 cate
 | 7 | F03/F07 landlord data | Document methodology; negotiate metering access at lease renewal | Medium-term; flag in inventory methodology notes now |
 | 8 | Cat 12 end-of-life data | Engage take-back scheme operators in NA and APAC | FY2026 inventory |
 | 9 | Cat 4 tonne-km data | Collect tonne-km data from top 5 logistics providers | FY2025 inventory |
-| 10 | RE100 procurement gap | Expand renewable electricity procurement to F04, F05, F06 as a minimum | Aligned with RE100 2030 target; initiate procurement now |
+
+---
+
+## Strategic Observation
+
+**RE100 Procurement Gap**
+
+Six of nine facilities — representing approximately 84.7% of total electricity consumption — have no renewable energy procurement in place as of FY2023. This is outside the scope of a data quality audit and does not constitute a GHG Protocol compliance issue. It is flagged here because it has direct materiality to two obligations Lumora is working toward: CSRD ESRS E1 requires disclosure of the proportion of renewable electricity consumed and the entity's transition plan, and SBTi near-term targets for Scope 2 are most efficiently met through renewable procurement rather than absolute consumption reduction alone.
+
+Expanding renewable electricity procurement to F04 (Ho Chi Minh City), F05 (Penang), and F06 (Monterrey) — the three largest non-renewable electricity consumers — would reduce Scope 2 market-based emissions by approximately 48,780 tCO2e, a 96% reduction in Scope 2 from current levels. This should be addressed through the sustainability strategy workstream, not the inventory correction process.
 
 ---
 
