@@ -1,35 +1,37 @@
 # Sustainability & Climate Risk Portfolio
 
-An AI-augmented sustainability and climate risk portfolio demonstrating end-to-end consulting workflows built with Claude Code. The project simulates a full client engagement spanning GHG accounting, SBTi target-setting, physical and transition risk assessment, double materiality, and IFRS S2/CSRD disclosure. Each step produces consultant-grade deliverables -- structured data outputs, reconciled inventories, scored risk assessments, and regulator-ready narrative -- using reproducible Python tooling and a configured methodology file (CLAUDE.md) that encodes professional standards directly into the AI workflow.
+I built this to demonstrate how AI tooling -- specifically Claude Code -- can be used to accelerate real climate risk consulting work, not just summarise documents. It covers a full engagement lifecycle: data ingestion, GHG accounting, physical and transition risk, materiality, and disclosure.
 
 ## Simulated Client
 
-Lumora Technologies B.V. is a consumer electronics manufacturer headquartered in Amsterdam, operating nine facilities across seven countries including manufacturing sites in Vietnam, Malaysia, Mexico, and the Netherlands. The company has approximately 4.2 million units of annual product sales and a total FY2023 GHG footprint of 746,285.9 tCO2e (Scope 1+2+3, market-based), with Scope 3 representing 92.5% of total emissions. Lumora is used throughout this portfolio as a realistic, data-rich client context for testing AI-assisted climate risk workflows against the complexity of real-world engagements.
+Lumora Technologies B.V. is a consumer electronics manufacturer headquartered in Amsterdam with nine facilities across seven countries. FY2023 total emissions: 746,285.9 tCO2e (Scope 1+2+3, market-based).
 
-## Project Steps
+## What I Built
 
-| Step | Title | Status | Deliverables |
-|------|-------|--------|--------------|
-| 1 | AI-Augmented Workflow Setup | Complete | CLAUDE.md methodology config, workflow explainer |
-| 2 | Data Audit, GHG Accounting and SBTi Gap Analysis | Complete | Data quality memo, GHG inventory, RAG receipt parser, emissions calculator, inventory reconciliation, SBTi gap analysis, Step 2 summary memo |
-| 3 | Physical Risk Assessment and Multi-Hazard Map | In Progress | Physical risk assessment report, interactive multi-hazard asset map |
-| 4 | Transition Risk Assessment and Integrated Narrative | Planned | Transition risk assessment, integrated physical and transition narrative |
-| 5 | Double Materiality Assessment | Planned | IRO register, scored materiality matrix, topic narratives |
-| 6 | IFRS S2 / CSRD Disclosure Narrative | Planned | Full climate disclosure document aligned to IFRS S2 and ESRS E1 |
+| Step | Title | Status | Folder | Key Files |
+|------|-------|--------|--------|-----------|
+| 1 | AI Workflow Setup | Complete | `01-claude-setup/` | `workflow-explainer.md` -- explains the CLAUDE.md config and prompt engineering approach |
+| 2 | Data Audit, GHG Accounting, SBTi | Complete | `02-data-audit/` | `lumora-data-quality-memo.md`, `lumora-ghg-inventory.csv`, `receipt-parser/parser.py`, `calculate-emissions.py`, `reconciliation-report.csv`, `sbti-gap-analysis.py`, `step2-summary-memo.md` |
+| 3 | Physical Risk Assessment | In Progress | `03-physical-risk/` | Multi-hazard asset map, physical risk report |
+| 4 | Transition Risk Assessment | Planned | `04-transition-risk/` | Integrated risk narrative |
+| 5 | Double Materiality | Planned | `05-materiality/` | IRO register, materiality matrix |
+| 6 | IFRS S2 / CSRD Disclosure | Planned | `06-disclosure/` | Full disclosure document |
 
-## Tools and Methodology
+## How to Navigate This Repo
 
-| Category | Detail |
-|----------|--------|
-| AI Tooling | Claude Code (Anthropic), Claude API with prompt caching and few-shot prompting |
-| Language | Python 3 |
-| GHG Accounting | GHG Protocol Corporate Standard (Scope 1, 2, 3) |
-| Emission Factors | IPCC AR6, IEA 2023, DEFRA 2023, EPA eGRID 2023 |
-| Target-Setting | SBTi Corporate Net-Zero Standard v1.2, SBTi ICT Sector Guidance (GeSI) |
-| Physical Risk | IPCC AR6 / SSP scenarios (SSP1-2.6, SSP2-4.5, SSP5-8.5), ND-GAIN Country Index |
-| Transition Risk | NGFS scenarios (Net Zero 2050, Delayed Transition, Current Policies) |
-| Disclosure | IFRS S2, CSRD / ESRS E1, TCFD |
+Each numbered folder is a self-contained step with its own data inputs, code, and written outputs. Start with `CLAUDE.md` at the root to understand the methodology configuration that drives how Claude Code works across the project. Step 2 is the most code-heavy and is the best place to see the AI-assisted data pipeline in action: raw invoice text goes in, a reconciled and emission-factor-applied CSV comes out, and a gap analysis against SBTi targets is generated from that. Steps 3 onwards build on the same Lumora dataset and are designed to produce the kind of outputs a consultant would hand to a client or regulator. The `step2-summary-memo.md` in `02-data-audit/` is a good entry point if you want a narrative overview before diving into the code.
+
+## Tools Used
+
+- Claude Code and the Anthropic Python SDK (Claude claude-sonnet-4-6)
+- Python 3 -- pandas-free, stdlib only (csv, pathlib, datetime)
+- GHG Protocol Corporate Standard (Scope 1, 2, 3)
+- Emission factors: IPCC AR6, IEA 2023, DEFRA 2023, EPA eGRID 2023
+- SBTi Corporate Net-Zero Standard v1.2 and SBTi ICT Sector Guidance (GeSI)
+- IPCC AR6 / SSP scenarios for physical risk (SSP1-2.6, SSP2-4.5, SSP5-8.5)
+- NGFS scenarios for transition risk (Net Zero 2050, Delayed Transition, Current Policies)
+- IFRS S2 and CSRD / ESRS E1 for disclosure
 
 ---
 
-Taylor Black | [LinkedIn](https://www.linkedin.com/in/taylor-black-97397280/)
+Taylor Black -- [LinkedIn](https://www.linkedin.com/in/taylor-black-97397280/)
