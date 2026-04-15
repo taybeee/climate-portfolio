@@ -249,24 +249,38 @@ def _extract_via_cli(invoice_text: str) -> dict:
     """
     Fallback extraction using the `claude` CLI (Claude Code).
     Works inside Claude Code sessions without a separate API key.
-    Combines the system prompt and invoice into a single prompt string.
+
+    The prompt is passed via stdin rather than as a -p argument.
+    This avoids the Windows cmd.exe command-line length limit (~8191 chars),
+    which silently truncates long -p arguments and produces empty output.
+
+    Claude detects non-TTY stdin and runs non-interactively.
+    Two strategies are tried in order:
+      1. claude -p  (explicit print/non-interactive mode, prompt via stdin)
+      2. claude     (implicit non-interactive mode when stdin is a pipe)
     """
     prompt = f"{SYSTEM_PROMPT}\n\nINVOICE TO PROCESS:\n{invoice_text}"
-    cmd = _find_claude() + ["-p", prompt]
+    base_cmd = _find_claude()
 
-    result = subprocess.run(
-        cmd,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        timeout=120,
-    )
-    if result.returncode != 0:
-        raise RuntimeError(
-            f"claude CLI exited with code {result.returncode}: "
-            f"{result.stderr.strip() or result.stdout.strip()}"
+    for cmd in [base_cmd + ["-p"], base_cmd]:
+        result = subprocess.run(
+            cmd,
+            input=prompt,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            timeout=120,
         )
-    return _parse_response(result.stdout)
+        # Response may appear on stdout or stderr depending on claude version
+        output = result.stdout.strip() or result.stderr.strip()
+        if output:
+            return _parse_response(output)
+
+    raise RuntimeError(
+        "claude CLI returned no output from either strategy. "
+        f"base_cmd={base_cmd}, last exit code={result.returncode}. "
+        "Ensure claude is authenticated (run `claude` once interactively)."
+    )
 
 
 def extract_fields(invoice_text: str) -> dict:
