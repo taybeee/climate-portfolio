@@ -1,0 +1,71 @@
+═══════════════════════════════════════════════════════════════════════
+         TOTAL GAS MEXICO, S.A. DE C.V.
+         Región de Distribución Monterrey / Monterrey Distribution Region
+         RFC: TGM-980401-M15
+         Av. Constitución 500 Ote., Col. Centro, Monterrey, N.L. C.P. 64000
+         Tel: (81) 8340-2200
+═══════════════════════════════════════════════════════════════════════
+
+               FACTURA DE SUMINISTRO DE GAS NATURAL
+               NATURAL GAS SUPPLY INVOICE
+
+Folio Fiscal:       TGM-MTY-2023-0183
+Fecha de Emisión:   March 3, 2023
+UUID CFDI:          6FAD1234-ABCD-4321-8765-90EF12345678
+
+Cliente:            Lumora Technologies México S. de R.L. de C.V.
+RFC Cliente:        LTM-180601-AB3
+Dirección:          Carretera Miguel Alemán Km 14.5
+                    Parque Industrial Stiva Aeropuerto
+                    66600 Apodaca, Nuevo León, México
+
+Planta / Facility:  Monterrey Manufacturing  —  Facility Code: F06
+Número de contrato: TGM-IND-NL-00293
+Tipo de suministro: Gas natural — Cliente industrial de alto volumen
+Presión de entrega: Media presión (MP) — 60 psi
+
+───────────────────────────────────────────────────────────────────────
+PERIODO DE FACTURACIÓN / BILLING PERIOD:
+  Inicio / Start:  01 enero 2023   (January 1, 2023)
+  Fin   / End:     28 febrero 2023 (February 28, 2023)
+  NOTA: Esta factura cubre DOS meses de consumo (enero y febrero 2023).
+  NOTE: This invoice covers TWO billing months (January and February 2023).
+───────────────────────────────────────────────────────────────────────
+
+LECTURAS DE MEDIDOR / METER READINGS:
+  Lectura inicial  (01-ene-2023):     28.441,20 GJ
+  Lectura final    (28-feb-2023):     39.421,35 GJ
+                                      ──────────
+  Consumo del período / Consumption:  10.980,15 GJ
+
+  Poder calorífico superior / Higher heating value:  37,61 MJ/m³
+  Equivalente energético / kWh equivalent (ref.):    3.049.935 kWh
+  [Referencia únicamente — no usar para reportes de emisiones sin conversión verificada]
+
+───────────────────────────────────────────────────────────────────────
+DESGLOSE DE CARGOS / CHARGE BREAKDOWN
+───────────────────────────────────────────────────────────────────────
+
+  Costo de gas / Gas commodity:
+    10.980,15 GJ  ×  $198,40 MXN/GJ              $  2.178.461,76 MXN
+
+  Transporte CENAGAS / Pipeline transport:
+    10.980,15 GJ  ×   $22,15 MXN/GJ              $    243.213,32 MXN
+
+  Distribución / Local distribution:
+    10.980,15 GJ  ×   $14,80 MXN/GJ              $    162.506,22 MXN
+
+  Cargo fijo mensual (×2 meses) / Monthly fixed charge (×2):
+                                                  $     18.400,00 MXN
+                                                   ─────────────────
+  Subtotal sin IVA / Subtotal excl. VAT:          $  2.602.581,30 MXN
+  IVA 16% / VAT 16%:                              $    416.413,01 MXN
+                                                   ═════════════════
+  TOTAL A PAGAR / TOTAL DUE:                      $  3.018.994,31 MXN
+
+───────────────────────────────────────────────────────────────────────
+Vencimiento / Due date: March 25, 2023
+CLABE interbancaria: 072580004182934755
+Banco / Bank: BBVA México
+Proveedor / Supplier: Total Gas Mexico, S.A. de C.V.
+═══════════════════════════════════════════════════════════════════════

@@ -1,0 +1,74 @@
+----------------------------------------------------------------------
+  SHELL NEDERLAND B.V. — ZAKELIJKE BRANDSTOFFEN
+  Weena 70, 3012 CM Rotterdam | KvK: 27002687
+  Klantenservice: 0800-0222 | zakelijk@shell.nl
+----------------------------------------------------------------------
+                  BRANDSTOFFACTUUR / FUEL INVOICE
+----------------------------------------------------------------------
+
+Factuurnummer:    SHL-NL-2023-Q1-038821
+Factuurdatum:     05 april 2023
+Klantcode:        LUMORA-EIN-00194
+
+Klant:            Lumora Technologies B.V.
+                  Facility Management — Wagenparkbeheer
+                  Esp 201, 5633 AA Eindhoven
+
+Locatie:          Eindhoven Manufacturing — F02
+                  Intern gebruik: vorkheftruckvloot / forklift fleet
+
+----------------------------------------------------------------------
+LEVERINGSPERIODE / DELIVERY PERIOD:  Q1 2023 (01-01-2023 – 31-03-2023)
+----------------------------------------------------------------------
+
+BRANDSTOFTYPE / FUEL TYPE:   Diesel (EN 590)
+GEBRUIKSDOEL / PURPOSE:      Intern transport — vorkheftruck vloot
+                             (Internal logistics — forklift fleet, non-road)
+
+LEVERINGEN / DELIVERIES:
+
+  Datum          Bon nr.        Liters       Prijs/L
+  ─────────────────────────────────────────────────
+  12-01-2023     BN-0019821     3.150 L      €1,334/L
+  09-02-2023     BN-0021044     4.520 L      €1,298/L
+  21-02-2023     BN-0021893     1.830 L      €1,298/L
+  14-03-2023     BN-0023201     2.900 L      €1,311/L
+  ─────────────────────────────────────────────────
+  Totaal verbruik Q1 2023:     12.400 L
+
+----------------------------------------------------------------------
+KOSTENOVERZICHT / CHARGES
+----------------------------------------------------------------------
+
+  Brandstoflevering:
+    Levering 12-jan:  3.150 L × €1,334                      €4.202,10
+    Levering 09-feb:  4.520 L × €1,298                      €5.866,96
+    Levering 21-feb:  1.830 L × €1,298                      €2.375,34
+    Levering 14-mrt:  2.900 L × €1,311                      €3.801,90
+                                                        ─────────────
+  Subtotaal brandstof:                                     €16.246,30
+  Afleverkosten (4 leveringen × €85,00):                      €340,00
+                                                        ─────────────
+  Subtotaal excl. BTW:                                     €16.586,30
+  BTW 21%:                                                  €3.483,12
+                                                        ═════════════
+  TOTAAL TE BETALEN:                                       €20.069,42
+
+----------------------------------------------------------------------
+BETALING / PAYMENT
+----------------------------------------------------------------------
+
+Betalingstermijn:   30 april 2023
+IBAN:               NL46 ABNA 0628 6178 03
+Referentie:         SHL-NL-2023-Q1-038821
+
+Brandstoftype voor emissierapportage:   Diesel (EN 590)
+Emissiefactor referentie:               DEFRA 2023 — 2,68 kg CO2e/L
+Leverancier / Supplier:                 Shell Nederland B.V.
+
+----------------------------------------------------------------------
+OPMERKING: Dit betreft dieselleveringen voor intern magazijngebruik
+(niet-wegvoertuigen). Emissierapportage valt onder Scope 1.
+NOTE: These are diesel deliveries for internal warehouse use
+(non-road vehicles). For GHG reporting this is classified as Scope 1.
+----------------------------------------------------------------------

@@ -1,0 +1,57 @@
+================================================================================
+                           ENECO ZAKELIJK B.V.
+                     Marten Meesweg 5, 3068 AV Rotterdam
+                          KvK: 24029438 | BTW: NL006622807B01
+================================================================================
+
+FACTUUR / INVOICE
+
+Factuurnummer:    ENE-2023-NL-089421
+Factuurdatum:     18 februari 2023
+
+Klant:            Lumora Technologies B.V.
+Klantnummer:      LUM-NL-00847
+Adres:            Herengracht 420
+                  1017 BZ Amsterdam
+                  Nederland
+
+Installatie:      Amsterdam Headquarters (F01)
+EAN-code:         871687440012345678
+Aansluitadres:    Herengracht 420, 1017 BZ Amsterdam
+
+--------------------------------------------------------------------------------
+LEVERINGSPERIODE: 01 januari 2023 t/m 31 januari 2023
+--------------------------------------------------------------------------------
+
+Soort levering:   Elektriciteit (100% hernieuwbaar via PPA)
+
+Meterstand begin (01-01-2023):   14.829.100 kWh
+Meterstand eind  (31-01-2023):   15.139.550 kWh
+                                 ─────────────
+Verbruik:                           310.450 kWh
+
+--------------------------------------------------------------------------------
+SPECIFICATIE KOSTEN
+--------------------------------------------------------------------------------
+
+Energielevering:   310.450 kWh × €0,1842/kWh                       €57.144,89
+Netwerktransport:                                                     €1.200,00
+Vaste leveringskosten (per maand):                                      €285,00
+                                                               ────────────────
+Subtotaal (excl. BTW):                                               €58.629,89
+BTW 21%:                                                             €12.312,28
+                                                               ════════════════
+TOTAAL TE BETALEN:                                                   €70.942,17
+
+--------------------------------------------------------------------------------
+BETAALGEGEVENS
+--------------------------------------------------------------------------------
+
+Betalingstermijn: 28 februari 2023
+IBAN:             NL91 ABNA 0417 1643 00
+Betalingskenmerk: ENE-2023-NL-089421
+
+Groene stroom garantie: REGO-certificaten batch REG-NL-2023-A-047821
+Leverancier:      Eneco Zakelijk B.V.
+
+================================================================================

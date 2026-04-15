@@ -1,0 +1,73 @@
+TỔNG CÔNG TY ĐIỆN LỰC MIỀN NAM
+CÔNG TY ĐIỆN LỰC THÀNH PHỐ HỒ CHÍ MINH
+SOUTHERN POWER CORPORATION — HO CHI MINH CITY POWER COMPANY
+Địa chỉ / Address: 35 Tôn Đức Thắng, Quận 1, TP. Hồ Chí Minh
+Điện thoại: (028) 3824 7247
+──────────────────────────────────────────────────────────────────
+         HÓA ĐƠN TIỀN ĐIỆN / ELECTRICITY INVOICE
+──────────────────────────────────────────────────────────────────
+
+Số hóa đơn / Invoice No:   EVN-HCMC-2023-04-887234
+Ngày xuất hóa đơn / Issue Date:   05/05/2023
+
+Khách hàng / Customer:   Lumora Technologies Vietnam Co., Ltd
+Mã khách hàng / Customer Code:   EVN-HCM-IND-04821
+Địa chỉ / Address:   Khu Công Nghiệp Hiệp Phước, Nhà Bè
+                     Thành phố Hồ Chí Minh, Việt Nam
+
+Cơ sở / Facility:   Ho Chi Minh City Manufacturing  |  Code: F04
+Loại hợp đồng:   Khách hàng công nghiệp lớn / Large Industrial
+Cấp điện áp / Voltage:   22kV trung áp
+
+──────────────────────────────────────────────────────────────────
+KỲ TÍNH ĐIỆN / BILLING PERIOD:  01/04/2023  to  30/04/2023
+──────────────────────────────────────────────────────────────────
+
+CHỈ SỐ CÔNG TƠ / METER READINGS:
+
+  Điện năng tác dụng / ACTIVE ENERGY (kWh):
+    Chỉ số đầu kỳ:    45.298.120 kWh
+    Chỉ số cuối kỳ:   48.181.453 kWh
+    TIÊU THỤ / CONSUMPTION:   2.883.333 kWh
+
+  Điện năng phản kháng / REACTIVE ENERGY (kVArh):
+    Chỉ số đầu kỳ:    12.847.330 kVArh
+    Chỉ số cuối kỳ:   13.284.912 kVArh
+    Công suất phản kháng:        437.582 kVArh
+    [NOTE: Reactive energy is billed separately as surcharge — do not use for consumption reporting]
+
+──────────────────────────────────────────────────────────────────
+BẢNG GIÁ ĐIỆN / TARIFF (Quyết định số 648/QĐ-BCT)
+──────────────────────────────────────────────────────────────────
+
+  Giờ thấp điểm / Off-peak   (22:00–06:00):
+      890.245 kWh  ×  1.834 đ/kWh          =   1.632.809.430 đ
+
+  Giờ bình thường / Shoulder  (06:00–09:30, 11:30–17:00, 20:00–22:00):
+    1.204.611 kWh  ×  2.148 đ/kWh          =   2.587.503.228 đ
+
+  Giờ cao điểm / Peak         (09:30–11:30, 17:00–20:00):
+      788.477 kWh  ×  3.076 đ/kWh          =   2.424.715.252 đ
+                                             ─────────────────
+  Tiền điện / Energy charge:                  6.645.027.910 đ
+  Phụ phí công suất phản kháng / Reactive surcharge:
+                                                  24.350.000 đ
+  Phí dịch vụ / Service fee:                     18.500.000 đ
+                                             ─────────────────
+  Tổng chưa thuế / Subtotal (excl. VAT):     6.687.877.910 đ
+  Thuế GTGT 8% / VAT 8%:                       535.030.233 đ
+                                             ═════════════════
+  TỔNG SỐ TIỀN / TOTAL DUE:                  7.222.908.143 đ
+
+  (Bảy tỷ hai trăm hai mươi hai triệu chín trăm linh tám
+   ngàn một trăm bốn mươi ba đồng chẵn)
+
+──────────────────────────────────────────────────────────────────
+Nhà cung cấp / Supplier: Công ty Điện lực TP. Hồ Chí Minh (EVNHCMC)
+Hạn thanh toán / Payment due: 20/05/2023
+Số tài khoản / Bank account: VCB 0451000123456789
+
+ACCOUNTS PAYABLE NOTE: Amount in Vietnamese Dong (VND).
+FX reference rate: 1 USD ≈ 23,450 VND (April 2023 average, State Bank of Vietnam).
+Approx. USD equivalent: ~$308,000. Currency conversion not independently verified.
+──────────────────────────────────────────────────────────────────

@@ -1,0 +1,52 @@
+                    VATTENFALL ENERGY TRADING NETHERLANDS N.V.
+                    Prinses Beatrixlaan 582 | 2595 BM Den Haag
+                    KvK: 34180680 | BTW: NL001887588B01
+                    ─────────────────────────────────────────
+                         FACTUUR AARDGAS — ZAKELIJKE MARKT
+
+Referentie:       VAT-GAS-2023-EIN-00312
+Datum:            02 april 2023
+Klantnummer:      LUM-NL-M-00291
+
+Aan:              Lumora Technologies B.V.
+                  t.a.v. Facility Management
+                  Esp 201
+                  5633 AA Eindhoven
+                  Nederland
+
+Installatie:      Eindhoven Manufacturing (F02)
+Aansluiting EAN:  871687550023456789
+Metertype:        G1600 industriemeter (gecertificeerd NMi)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VERBRUIKSOVERZICHT — Q1 2023 (01-01-2023 t/m 31-03-2023)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Beginstand (01-01-2023):          5.291.440 m³
+  Eindstand  (31-03-2023):          5.463.950 m³
+                                    ─────────────
+  Verbruik periode:                   172.510 m³
+
+  Calorische bovenwaarde:            10,55 kWh/m³  (Groningen kwaliteit, GTS)
+  Energetisch equivalent (ref.):  1.819.980 kWh  (~1.820 MWh)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+KOSTENSPECIFICATIE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Aardgaslevering:     172.510 m³ × €0,1148/m³                    €19.804,15
+  Transporttarief:     172.510 m³ × €0,0082/m³                     €1.414,58
+  Energiebelasting:    172.510 m³ × €0,0599/m³                    €10.333,35
+  Vaste leveringskosten (3 maanden × €950,00):                      €2.850,00
+                                                                ─────────────
+  Subtotaal excl. BTW:                                             €34.402,08
+  BTW 21%:                                                          €7.224,44
+                                                                ═════════════
+  TOTAAL FACTUUR:                                                  €41.626,52
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Betaling voor:  30 april 2023
+IBAN:           NL14 RABO 0138 4750 18
+Referentie:     VAT-GAS-2023-EIN-00312
+Leverancier:    Vattenfall Energy Trading Netherlands N.V.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
